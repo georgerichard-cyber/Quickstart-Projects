@@ -1,0 +1,53 @@
+
+import socket
+import datetime
+import sys
+
+scn_fl = open("A text file.txt", "w")
+
+hst_nm = input ("Pick a host, any host: ")
+pt_nmbr = int(input("Enter highest port number to scan: "))
+
+rtrn_nm = socket.gethostbyname(hst_nm)
+nm_lst = socket.gethostbyaddr(rtrn_nm)
+
+scn_fl.write("Welcome to George's PortScanner!! \n \n Our target is -->{} AKA {} \n \n".format(hst_nm, rtrn_nm))
+
+i = 0
+print(nm_lst)
+print("Target Socket is {}:{}".format(rtrn_nm, pt_nmbr))
+
+ti = datetime.datetime.now()
+scn_fl.write("Our current time is : {} \n\n".format(ti))
+print(ti)
+
+try:
+        while i <= pt_nmbr:
+                s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                s.settimeout( 0.1)
+                chk= s.connect_ex((rtrn_nm, i))
+                print(str(i) + ":" + str(chk))
+
+                if chk == 0:
+                        print("the port number{} is open on {}" .format(i, hst_nm))
+                        scn_fl.write("The Port number{} is open on {} " .format(i, hst_nm))
+
+                i += 1
+                tf = datetime.datetime.now()
+                print(tf)
+                tt = tf - ti
+                print(tt)
+except KeyboardInterrupt:
+    print ("You pressed Ctrl+C")
+    sys.exit()
+
+except socket.gaierror:
+    print ('Hostname could not be resolved. Exiting')
+    sys.exit()
+except socket.error:
+    print ("Couldn't connect to server")
+    sys.exit()
+
+scn_fl.write("Excellent scan! Well done!")
+print("Have a wonderful day!")
+scn_fl.close()
