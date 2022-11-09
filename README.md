@@ -1,8 +1,8 @@
 # Quickstart-Projects
 Collection of my work - George Richard
 
-I am very interested in entering the Cybersecurity field; I took Quickstart's Virtual Bootcamp recently and am using these repositories to display my learnings.
+As someone interested in entering the Cybersecurity field, I have recently taken Quickstart's Virtual Bootcamp and am using these repositories to showcase my learnings.
 
-One file shown has my code for a port scanner for TCP ports, ranging from 0-1025 and checking their open vs closed status. It works extremely fast, and any open ports that are discovered get marked via a text file.
+I have included my source code for a port scanner that checks if TCP ports are open versus closed, ranging from 0-1025. This program works very quickly, and it creates a text file that highlights any open ports that it finds.
 
-The other file is a video demonstration displaying modifications I've made to a network and its security settings; I show virtual machines and their settings, the scans and exploits I use, firewall traffic settings, and SNORT alerts meant to track the exploits.
+The other file shows a video demonstration of changes I've made to a network and its security settings; I show virtual machines and their settings, the scans and exploits I use, firewall traffic settings, and SNORT alerts meant to track the exploits shown.
